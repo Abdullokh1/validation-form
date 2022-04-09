@@ -68,7 +68,6 @@ emailInput.addEventListener('keyup', ()=>{
   }
 })
 
-
 numInput.addEventListener('keyup', ()=>{
   let numValue = numInput.value;
 

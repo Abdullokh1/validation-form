@@ -27,6 +27,7 @@ body {
   padding: 13px 70px;
   background-color: #fff;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .input{
   width: 277px;
