@@ -7,9 +7,54 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #f4f4f4 !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+  align-items: center;
+  justify-content: center;
 
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.form-title{
+  font-size: 46px;
+  font-weight: 500;
+}
+.form-wrapper{
+  padding: 13px 70px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.input{
+  width: 277px;
+  height: 50px;
+  border: 1px solid rgba(128, 128, 128, 0.333);
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.input:hover{
+  border-color: #767676;
+}
+.warning-p{
+  font-size: 12px;
+  opacity: 0;
+  color: #EE0004;
+}
+.input:focus{
+  outline: none;
+}
+.submit{
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: #543FD3;
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.submit:hover{
+  background-color: #10025e;
+}
