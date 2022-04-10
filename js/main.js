@@ -69,6 +69,7 @@ emailInput.addEventListener('blur', ()=>{
       emailInput.style.border = '2px solid #543FD3';
       istrue = true;
       count++;
+     
     }
   }
   catch(e){
@@ -140,7 +141,7 @@ confirmInput.addEventListener('keyup', ()=>{
       istrue = true;
       count++;
 
-      if (istrue && count == 5){
+      if (istrue && count >= 5){
         submit.removeAttribute('disabled');
         submit.style.backgroundColor = '#543FD3';
       }
@@ -151,10 +152,8 @@ confirmInput.addEventListener('keyup', ()=>{
   }
   catch(e){
     confirmWarn.innerText = e;
-    istrue = false;
   }
 })
-
 
 
 
