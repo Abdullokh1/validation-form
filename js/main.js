@@ -10,9 +10,12 @@ const passwordWarn = document.querySelector('.passwordWarn');
 const confirmInput = document.querySelector('.confirm-input');
 const confirmWarn = document.querySelector('.confirm-warn');
 const AllInput = document.querySelectorAll('.input');
+const submit = document.querySelector('.submit');
 
+let count = 0;
+let istrue = false;
 
-nameInput.addEventListener('keyup', ()=>{
+nameInput.addEventListener('blur', ()=>{
   
   let nameValue = nameInput.value;
   nameValue.trim();
@@ -31,14 +34,17 @@ nameInput.addEventListener('keyup', ()=>{
     else{
       nameInput.style.border = '2px solid #543FD3';
       nameWarning.innerText = '';
+      istrue = true;
+      count++;
     }
   }
-    catch (e){
-      nameWarning.innerText = e;
-    }
+  catch (e){
+    nameWarning.innerText = e;
+  }
+  
 })
 
-emailInput.addEventListener('keyup', ()=>{
+emailInput.addEventListener('blur', ()=>{
   let email = emailInput.value;
 
   try{
@@ -61,6 +67,8 @@ emailInput.addEventListener('keyup', ()=>{
     }
     else{
       emailInput.style.border = '2px solid #543FD3';
+      istrue = true;
+      count++;
     }
   }
   catch(e){
@@ -68,7 +76,7 @@ emailInput.addEventListener('keyup', ()=>{
   }
 })
 
-numInput.addEventListener('keyup', ()=>{
+numInput.addEventListener('blur', ()=>{
   let numValue = numInput.value;
 
 
@@ -81,6 +89,8 @@ numInput.addEventListener('keyup', ()=>{
     else{
       numInput.style.border = '2px solid #543FD3';
       numWarn.innerText = '';
+      istrue = true;
+      count++;
     }
   }
   catch(e){
@@ -103,6 +113,9 @@ password.addEventListener('keyup', ()=>{
     }
     if (password.value.match(/[0-9]/) != null && password.value.match(/[a-z]/) != null){
       password.style.border = '2px solid #543FD3';
+      istrue = true;
+      count++
+      
     }
     else{
      throw 'Weak password'
@@ -124,6 +137,13 @@ confirmInput.addEventListener('keyup', ()=>{
     else{
       confirmInput.style.border = '2px solid #543FD3';
       confirmWarn.innerText = '';
+      istrue = true;
+      count++;
+
+      if (istrue && count == 5){
+        submit.removeAttribute('disabled');
+        submit.style.backgroundColor = '#543FD3';
+      }
     }
     if (confirmInput.value == ''){
       confirmInput.style.border = '2px solid #ee0004';
@@ -131,7 +151,21 @@ confirmInput.addEventListener('keyup', ()=>{
   }
   catch(e){
     confirmWarn.innerText = e;
+    istrue = false;
   }
 })
 
+
+
+
  
+ 
+
+
+
+
+
+
+
+
+
